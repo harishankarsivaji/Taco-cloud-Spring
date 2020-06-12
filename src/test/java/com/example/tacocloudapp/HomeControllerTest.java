@@ -1,5 +1,6 @@
 package com.example.tacocloudapp;
 
+import com.example.tacocloudapp.Controller.HomeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class HomeControllerTest {
     public void testHomePage() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("home"))
+                .andExpect(view().name("index"))
                 .andExpect(content().string(
                         containsString("Welcome to Taco Cloud Application")));
     }
