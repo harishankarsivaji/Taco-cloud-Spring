@@ -1,16 +1,16 @@
 package com.example.tacocloudapp.Controller;
 
+import com.example.tacocloudapp.Controller.Ingredient.Type;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.example.tacocloudapp.Controller.Ingredient.Type;
-import com.example.tacocloudapp.Controller.Taco;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
@@ -37,6 +37,19 @@ public class DesignTacoController {
         }
         model.addAttribute("design", new Taco());
         return "design";
+    }
+
+    @PostMapping
+    public <Design> String processDesign(Design design) {
+        // Save Taco design
+        log.info("Processing design: " + design);
+        return "redirect:/order/current";
+    }
+
+    private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
+        return ingredients.stream()
+                .filter(ingredient -> ingredient.getType().equals(type))
+                .collect(Collectors.toList());
     }
 
 }
