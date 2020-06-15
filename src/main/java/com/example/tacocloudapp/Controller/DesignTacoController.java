@@ -1,6 +1,8 @@
 package com.example.tacocloudapp.Controller;
 
-import com.example.tacocloudapp.Controller.Ingredient.Type;
+import com.example.tacocloudapp.model.Ingredient;
+import com.example.tacocloudapp.model.Ingredient.Type;
+import com.example.tacocloudapp.model.Taco;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

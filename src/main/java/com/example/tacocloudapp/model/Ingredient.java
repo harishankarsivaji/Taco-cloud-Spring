@@ -1,4 +1,4 @@
-package com.example.tacocloudapp.Controller;
+package com.example.tacocloudapp.model;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
