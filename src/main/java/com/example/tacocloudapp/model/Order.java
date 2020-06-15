@@ -21,7 +21,7 @@ public class Order {
     @NotBlank(message = "State is required")
     private String state;
 
-    @NotBlank(message = "Zipcode is required ")
+    @NotBlank(message = "Zipcode is required")
     private String zip;
 
     @CreditCardNumber(message="Not a valid credit card number")
