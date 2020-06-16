@@ -8,6 +8,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
@@ -24,12 +25,11 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(@Valid Order orderForm, Errors errors) {
+    public String processOrder(@Valid Order order, Errors errors) {
         if (errors.hasErrors()) {
-            return "design";
+            return "orderForm";
         }
-
-        log.info("Order submitted: " + orderForm);
+        log.info("Order submitted: " + order);
         return "redirect:/";
     }
 }

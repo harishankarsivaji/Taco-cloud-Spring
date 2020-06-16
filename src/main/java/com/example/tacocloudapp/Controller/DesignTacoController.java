@@ -27,6 +27,7 @@ public class DesignTacoController {
                 new Ingredient("FLTO", "Flour Tortilla", Type.WRAP),
                 new Ingredient("COTO", "Corn Tortilla", Type.WRAP),
                 new Ingredient("GRBF", "Ground Beef", Type.PROTEIN),
+                new Ingredient("GRCH", "Ground Chicken", Type.PROTEIN),
                 new Ingredient("CARN", "Carnitas", Type.PROTEIN),
                 new Ingredient("TMTO", "Diced Tomatoes", Type.VEGGIES),
                 new Ingredient("LETC", "Lettuce", Type.VEGGIES),
