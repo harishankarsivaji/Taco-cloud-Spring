@@ -3,13 +3,15 @@ package com.example.tacocloudapp.model;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import org.hibernate.validator.constraints.CreditCardNumber;
+
 import lombok.Data;
+
+import org.hibernate.validator.constraints.CreditCardNumber;
 
 @Data
 public class Order {
 
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "Customer Name is required")
     private String name;
 
     @NotBlank(message = "Street is required")
@@ -24,7 +26,7 @@ public class Order {
     @NotBlank(message = "Zipcode is required")
     private String zip;
 
-    @CreditCardNumber(message="Not a valid credit card number")
+    @Digits(integer=10, message="Not a valid credit card number", fraction = 0)
     private String ccNumber;
 
     @Pattern(regexp="^(0[1-9]|1[0-2])([/])([1-9][0-9])$", message="Must be formatted MM/YY")
