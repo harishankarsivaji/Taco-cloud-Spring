@@ -26,7 +26,7 @@ public class Order {
     @NotBlank(message = "Zipcode is required")
     private String zip;
 
-    @Digits(integer=10, message="Not a valid credit card number", fraction = 0)
+    @CreditCardNumber(message="Not a valid credit card number")
     private String ccNumber;
 
     @Pattern(regexp="^(0[1-9]|1[0-2])([/])([1-9][0-9])$", message="Must be formatted MM/YY")
